@@ -1,0 +1,5 @@
+@custom-media --sm-viewport (max-width: 30em);
+@custom-media --md-viewport (max-width: 60em);
+@custom-media --gt-sm-viewport (min-width: 30em);
+@custom-media --gt-md-viewport (min-width: 60em);
+@custom-media --gt-lg-viewport (min-width: 120em);

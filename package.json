@@ -1,0 +1,49 @@
+{
+  "name": "@melhosseiny/aurora",
+  "version": "0.0.1",
+  "description": "UI component library for web projects",
+  "license": "CC-BY-NC-ND 4.0",
+  "author": "Mostafa Elshamy",
+  "files": [
+    "src/**/index.css",
+    "src/index.js"
+  ],
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melhosseiny/aurora.git"
+  },
+  "scripts": {
+    "build:typography": "npx postcss src/typography/_index.css -o src/typography/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylelint": "npx stylelint src/**/*.{css}"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.1.4",
+    "postcss-cli": "^8.2.0",
+    "postcss-import": "^13.0.0",
+    "postcss-preset-env": "^6.7.0"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 version",
+      "> 1%",
+      "ie 11",
+      "not dead"
+    ],
+    "production": [
+      "last 1 version",
+      "> 1%",
+      "not ie 11",
+      "not dead"
+    ],
+    "test": [
+      "node 14"
+    ]
+  }
+}

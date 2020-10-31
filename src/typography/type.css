@@ -1,0 +1,174 @@
+/* reset */
+/* stylelint-disable */
+html, body, section, nav, article, aside, h1, h2, h3,
+h4, h5, h6, hgroup, header, footer, address, p, hr, pre,
+blockquote, ol, ul, li, dl, dt, dd, figure, figcaption,
+div, table, caption, form, fieldset {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+/* stylelint-enable */
+
+/* type */
+body {
+  font-family: var(--type-body);
+  font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+
+  /* color */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+@supports (font-variant-ligatures: common-ligatures) {
+  body {
+    font-feature-settings: normal;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: oldstyle-nums;
+  }
+}
+
+@supports (kerning: normal) {
+  body {
+    font-feature-settings: normal;
+    kerning: normal;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--type-display);
+  font-feature-settings: "onum" 0;
+}
+
+@supports (font-variant-ligatures: common-ligatures) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-feature-settings: normal;
+    font-variant-numeric: lining-nums;
+  }
+}
+
+h3,
+abbr {
+  hyphens: manual;
+  text-transform: lowercase;
+  font-feature-settings: "smcp" 1, "c2sc" 1;
+}
+
+@supports (font-variant-caps: all-small-caps) {
+  h3,
+  abbr {
+    font-feature-settings: normal;
+    font-variant-caps: all-small-caps;
+  }
+}
+
+.caps { letter-spacing: 0.05em; } /* add 5% spacing */
+
+sub { font-feature-settings: "subs" 1; }
+
+@supports (font-variant-position: sub) {
+  sub {
+    font-feature-settings: normal;
+    font-variant-position: sub;
+  }
+}
+
+@supports ((font-variant-position: sub) or (font-feature-settings: "subs" 1)) {
+  sub {
+    vertical-align: inherit;
+    font-size: inherit;
+  }
+}
+
+sup {
+  font-feature-settings: "sups" 1;
+}
+
+@supports (font-variant-position: super) {
+  sup {
+    font-feature-settings: normal;
+    font-variant-position: super;
+  }
+}
+
+@supports ((font-variant-position: super) or (font-feature-settings: "sups" 1)) {
+  sup {
+    vertical-align: inherit;
+    font-size: inherit;
+  }
+}
+
+article {
+  max-width: 38em;
+}
+
+p {
+  hyphens: auto;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-chars: 6 3 2;
+  hyphenate-limit-zone: 8%;
+  hyphenate-limit-last: always;
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+hr {
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: 1px 0 0;
+  margin: 0;
+  box-sizing: content-box;
+  height: 0;
+  margin-bottom: 1em;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 1em;
+  list-style: none;
+  counter-reset: mylist;
+}
+
+ul li::before {
+  counter-increment: mylist;
+  content: '\2022';
+  margin-right: 0.5em;
+}
+
+ol li::before {
+  counter-increment: mylist;
+  content: counter(mylist);
+  margin-right: 0.5em;
+  font-weight: 600;
+}
+
+/* Hyperlinks: LVFHA */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+a:visited {
+  color: #0ff;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
