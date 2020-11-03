@@ -1,3 +1,5 @@
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
 /* reset */
 /* stylelint-disable */
 html, body, section, nav, article, aside, h1, h2, h3,
@@ -20,43 +22,31 @@ body {
   color: var(--text-color);
 }
 
-@supports (font-variant-ligatures: common-ligatures) {
+/* Turn on common ligatures, old-style numerals and kerning */
+@supports (font-variant-ligatures: common-ligatures) and
+          (font-variant-numeric: oldstyle-nums) and
+          (font-kerning: normal) {
   body {
     font-feature-settings: normal;
     font-variant-ligatures: common-ligatures;
     font-variant-numeric: oldstyle-nums;
+    font-kerning: normal;
   }
 }
 
-@supports (kerning: normal) {
-  body {
-    font-feature-settings: normal;
-    kerning: normal;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:--heading {
   font-family: var(--type-display);
   font-feature-settings: "onum" 0;
 }
 
-@supports (font-variant-ligatures: common-ligatures) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+@supports (font-variant-numeric: lining-nums) {
+  :--heading {
     font-feature-settings: normal;
     font-variant-numeric: lining-nums;
   }
 }
 
+/* Use real small caps for abbr */
 h3,
 abbr {
   hyphens: manual;
@@ -74,6 +64,7 @@ abbr {
 
 .caps { letter-spacing: 0.05em; } /* add 5% spacing */
 
+/* Proper subscripts and superscripts */
 sub { font-feature-settings: "subs" 1; }
 
 @supports (font-variant-position: sub) {
@@ -108,27 +99,55 @@ sup {
   }
 }
 
-article {
+/* Set a comfortable reading measure for p, blockquotes */
+p, blockquote {
   max-width: 38em;
 }
 
+/* Turn on automatic hyphenation */
 p {
+  margin-top: 0;
+  color: var(--text-color);
   hyphens: auto;
   hyphenate-limit-lines: 2;
   hyphenate-limit-chars: 6 3 2;
   hyphenate-limit-zone: 8%;
   hyphenate-limit-last: always;
-  margin-top: 0;
-  color: var(--text-color);
+}
+
+blockquote {
+  margin-left: 1em;
+
+  & p {
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  & footer {
+    text-align: right;
+  }
+}
+
+:global(.quoted) p {
+  quotes: '“' '”' '‘' '’';
+}
+
+:global(.quoted) p:before {
+  content: open-quote;
+  margin-left: -0.83ch; /* adjust */
+}
+
+:global(.quoted) p:after {
+  content: close-quote;
 }
 
 hr {
+  height: 0;
+  margin: 0;
+  margin-bottom: 1em;
   border-color: rgba(0, 0, 0, 0.12);
   border-width: 1px 0 0;
-  margin: 0;
   box-sizing: content-box;
-  height: 0;
-  margin-bottom: 1em;
 }
 
 ul,
@@ -140,12 +159,14 @@ ol {
   counter-reset: mylist;
 }
 
+/* Indent li by multiples of the line height */
 ul li::before {
   counter-increment: mylist;
   content: '\2022';
   margin-right: 0.5em;
 }
 
+/* Use CSS counters in ol to allow hanging numbers in the margin */
 ol li::before {
   counter-increment: mylist;
   content: counter(mylist);
@@ -165,10 +186,11 @@ a:active {
 }
 
 a:visited {
-  color: #0ff;
+  color: var(--accent-color);
 }
 
 a:hover,
 a:active {
   text-decoration: underline;
+  text-decoration-skip-ink: auto;
 }

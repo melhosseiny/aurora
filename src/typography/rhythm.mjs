@@ -69,7 +69,7 @@ const template = (i0, l) => `
     font-size: ${fi(i0) / _f0}rem;
     line-height: ${fi(l) / fi(i0)};
   } /* ${fi(i0)}px */
-  p {
+  p, blockquote {
     margin-bottom: ${fi(l) / fi(i0)}em;
   }
 `

@@ -1,0 +1,33 @@
+button, a:global(.btn) {
+  font-size: 1rem;
+  font-family: var(--type-body);
+  background-color: rgb(var(--accent-color));
+  border: 1px solid rgba(0,0,0,0.2);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 8px;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 64px;
+  height: 26px;
+  outline: none;
+  user-select: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 4px;
+  color: rgb(var(--text-color));
+}
+
+button:hover, a:global(.btn):hover {
+  cursor: pointer;
+  background-color: rgba(var(--accent-color), 0.8);
+  transition: background-color 0.5s ease;
+}
+
+button:active, a:global(.btn):hover {
+  outline: none;
+}

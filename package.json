@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build:typography": "npx postcss src/typography/_index.css -o src/typography/index.css",
+    "build:button": "npx postcss src/button/_index.css -o src/button/index.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "stylelint": "npx stylelint src/**/*.{css}"
   },
@@ -47,6 +48,6 @@
     ]
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   }
 }
