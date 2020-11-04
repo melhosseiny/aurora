@@ -65,7 +65,7 @@ const template = (i0, l) => `
     font-size: ${fi(i0+1) / _f0}rem;
     line-height: ${fi(l) / fi(i0+1)};
   } /* ${fi(i0+1)}px */
-  body, p, h4, h5, h6 {
+  body, :global(.type--body), p, h4, h5, h6 {
     font-size: ${fi(i0) / _f0}rem;
     line-height: ${fi(l) / fi(i0)};
   } /* ${fi(i0)}px */
@@ -82,12 +82,12 @@ ${template(0, 1)}
 }
 
 @media (--gt-lg-viewport) {
-  ${template(2, 2)}
+  ${template(1, 2)}
 }`
 
-console.log(rhythm());
+console.log(rhythm(true));
 
-fs.writeFile('rhythm.css', rhythm(), err => {
+fs.writeFile('src/typography/rhythm.css', rhythm(), err => {
   if (err) return console.log(err);
   console.log('> rhythm.css');
 });

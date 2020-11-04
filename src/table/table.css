@@ -1,0 +1,53 @@
+table {
+  border-collapse: collapse;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+@supports (font-variant-numeric: tabular-nums) {
+  table {
+    font-feature-settings: normal;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+}
+
+caption { caption-side: bottom; }
+
+td, th {
+  padding: 0.125em 0.5em 0.25em 0.5em;
+  line-height: 1;
+  text-align: left;
+}
+
+td:global(.num), th:global(.num) {
+  text-align: right;
+}
+
+/* transform: translate(2.58em,-2em) rotate(-60deg); */
+th:global(.oblique) {
+  transform-origin: bottom left;
+  position: absolute;
+}
+
+@media (max-width: 60em) {
+  table, tbody, tfoot, tr, th, td {
+    display: block;
+    text-align: left;
+  }
+  caption {
+    display: block;
+  }
+  thead, th:empty, td:empty {
+    display: none;
+    visibility: hidden;
+  }
+  th:global(.num), td:global(.num) {
+    text-align: left;
+  }
+  th[data-title]:before, td[data-title]:before {
+    content: attr(data-title) ": ";
+    display: inline-block;
+  }
+  tr + tr, tbody + tbody, tfoot {
+    margin-top: 1em;
+  }
+}

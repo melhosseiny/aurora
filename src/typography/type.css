@@ -180,13 +180,13 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: var(--primary-color);
+  color: rgb(var(--primary-color));
   text-decoration: none;
   transition: color 0.5s ease;
 }
 
 a:visited {
-  color: var(--accent-color);
+  color: rgb(var(--accent-color));
 }
 
 a:hover,

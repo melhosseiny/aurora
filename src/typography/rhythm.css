@@ -14,7 +14,7 @@
     font-size: 1.25rem;
     line-height: 1;
   } /* 20px */
-  body, p, h4, h5, h6 {
+  body, :global(.type--body), p, h4, h5, h6 {
     font-size: 1rem;
     line-height: 1.25;
   } /* 16px */
@@ -37,7 +37,7 @@
     font-size: 1.625rem;
     line-height: 1;
   } /* 26px */
-  body, p, h4, h5, h6 {
+  body, :global(.type--body), p, h4, h5, h6 {
     font-size: 1.25rem;
     line-height: 1.3;
   } /* 20px */
@@ -50,24 +50,24 @@
 @media (--gt-lg-viewport) {
   
   h1 {
-    font-size: 3.3125rem;
-    line-height: 0.9811320754716981;
-    margin-top: 0.49056603773584906em;
-  } /* 53px */
-  h2 {
     font-size: 2.625rem;
-    line-height: 0.6190476190476191;
+    line-height: 1.2380952380952381;
+    margin-top: 0.6190476190476191em;
   } /* 42px */
-  h3 {
+  h2 {
     font-size: 2.0625rem;
     line-height: 0.7878787878787878;
   } /* 33px */
-  body, p, h4, h5, h6 {
+  h3 {
     font-size: 1.625rem;
     line-height: 1;
   } /* 26px */
+  body, :global(.type--body), p, h4, h5, h6 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  } /* 20px */
   p, blockquote {
-    margin-bottom: 1em;
+    margin-bottom: 1.3em;
   }
 
 }

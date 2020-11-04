@@ -15,7 +15,9 @@
   },
   "scripts": {
     "build:typography": "npx postcss src/typography/_index.css -o src/typography/index.css",
+    "gen:rhythm": "node src/typography/rhythm.mjs",
     "build:button": "npx postcss src/button/_index.css -o src/button/index.css",
+    "build:table": "npx postcss src/table/_index.css -o src/table/index.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "stylelint": "npx stylelint src/**/*.{css}"
   },
