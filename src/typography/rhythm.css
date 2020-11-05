@@ -21,6 +21,10 @@
   p, blockquote {
     margin-bottom: 1.25em;
   }
+  :global(.type--body) {
+    font-family: var(--type-body);
+    font-weight: 400;
+  }
 
 @media (--gt-md-viewport) {
   
@@ -43,6 +47,10 @@
   } /* 20px */
   p, blockquote {
     margin-bottom: 1.3em;
+  }
+  :global(.type--body) {
+    font-family: var(--type-body);
+    font-weight: 400;
   }
 
 }
@@ -68,6 +76,10 @@
   } /* 20px */
   p, blockquote {
     margin-bottom: 1.3em;
+  }
+  :global(.type--body) {
+    font-family: var(--type-body);
+    font-weight: 400;
   }
 
 }

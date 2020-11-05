@@ -72,6 +72,10 @@ const template = (i0, l) => `
   p, blockquote {
     margin-bottom: ${fi(l) / fi(i0)}em;
   }
+  :global(.type--body) {
+    font-family: var(--type-body);
+    font-weight: 400;
+  }
 `
 
 const rhythm = (grid = false) => `
