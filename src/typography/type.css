@@ -62,7 +62,7 @@ abbr {
   }
 }
 
-.caps { letter-spacing: 0.05em; } /* add 5% spacing */
+:global(.caps) { letter-spacing: 0.05em; } /* add 5% spacing */
 
 /* Proper subscripts and superscripts */
 sub { font-feature-settings: "subs" 1; }

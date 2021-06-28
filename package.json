@@ -27,7 +27,9 @@
     "postcss": "^8.1.4",
     "postcss-cli": "^8.2.0",
     "postcss-import": "^13.0.0",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-modules": "^3.2.2",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-rhythm": "^0.0.0"
   },
   "engines": {
     "node": "14.x"

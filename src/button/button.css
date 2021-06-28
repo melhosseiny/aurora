@@ -1,33 +1,48 @@
-button, a:global(.btn) {
-  font-size: 1rem;
+button, input[type="button"], a:global(.button) {
+  --button-color: var(--accent-color);
+  --opacity-enabled: 1;
+  --opacity-hover: 0.76;
+  --opacity-active: 0.38;
+  --opacity-disabled: 0.32;
   font-family: var(--type-body);
-  background-color: rgb(var(--accent-color));
-  border: 1px solid rgba(0,0,0,0.2);
+  background-color: rgba(var(--button-color), var(--opacity-enabled));
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
   text-decoration: none;
-  text-transform: uppercase;
   padding: 0 8px;
   display: inline-flex;
   position: relative;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 64px;
-  height: 26px;
+  height: var(--line-height-body);
   outline: none;
   user-select: none;
   -webkit-appearance: none;
   overflow: hidden;
-  vertical-align: middle;
-  border-radius: 4px;
   color: rgb(var(--text-color));
 }
 
-button:hover, a:global(.btn):hover {
+button:hover, input[type="button"]:hover, a:global(.button):hover {
   cursor: pointer;
-  background-color: rgba(var(--accent-color), 0.8);
+  background-color: rgba(var(--button-color), var(--opacity-hover));
   transition: background-color 0.5s ease;
 }
 
-button:active, a:global(.btn):hover {
+button:active, input[type="button"]:active, a:global(.button):active {
   outline: none;
+  background-color: rgba(var(--button-color), var(--opacity-active));
+}
+
+button[disabled], input[type="button"][disabled], a:global(.button):not(:link) {
+  outline: none;
+  background-color: rgba(var(--button-color), var(--opacity-disabled));
+  color: rgba(var(--text-color), 0.38);
+}
+
+button:global(.text), input[type="button"]:global(.text), a:global(.button.text) {
+  --button-color: 0, 0, 0;
+  --opacity-enabled: 0;
+  --opacity-hover: 0.12;
+  --opacity-disabled: 0;
 }
