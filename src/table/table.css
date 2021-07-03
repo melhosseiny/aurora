@@ -18,12 +18,12 @@ td, th {
   text-align: left;
 }
 
-td:global(.num), th:global(.num) {
+td.num, th.num {
   text-align: right;
 }
 
 /* transform: translate(2.58em,-2em) rotate(-60deg); */
-th:global(.oblique) {
+th.oblique {
   transform-origin: bottom left;
   position: absolute;
 }
@@ -40,7 +40,7 @@ th:global(.oblique) {
     display: none;
     visibility: hidden;
   }
-  th:global(.num), td:global(.num) {
+  th.num, td.num {
     text-align: left;
   }
   th[data-title]:before, td[data-title]:before {

@@ -1,7 +1,4 @@
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
 /* reset */
-/* stylelint-disable */
 html, body, section, nav, article, aside, h1, h2, h3,
 h4, h5, h6, hgroup, header, footer, address, p, hr, pre,
 blockquote, ol, ul, li, dl, dt, dd, figure, figcaption,
@@ -10,7 +7,6 @@ div, table, caption, form, fieldset {
   margin: 0;
   padding: 0;
 }
-/* stylelint-enable */
 
 /* type */
 body {
@@ -34,13 +30,13 @@ body {
   }
 }
 
-:--heading {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--type-display);
   font-feature-settings: "onum" 0;
 }
 
 @supports (font-variant-numeric: lining-nums) {
-  :--heading {
+  h1, h2, h3, h4, h5, h6 {
     font-feature-settings: normal;
     font-variant-numeric: lining-nums;
   }
@@ -62,7 +58,7 @@ abbr {
   }
 }
 
-:global(.caps) { letter-spacing: 0.05em; } /* add 5% spacing */
+.caps { letter-spacing: 0.05em; } /* add 5% spacing */
 
 /* Proper subscripts and superscripts */
 sub { font-feature-settings: "subs" 1; }
@@ -128,16 +124,16 @@ blockquote {
   }
 }
 
-:global(.quoted) p {
+.quoted p {
   quotes: '“' '”' '‘' '’';
 }
 
-:global(.quoted) p:before {
+.quoted p:before {
   content: open-quote;
   margin-left: -0.83ch; /* adjust */
 }
 
-:global(.quoted) p:after {
+.quoted p:after {
   content: close-quote;
 }
 

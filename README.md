@@ -34,7 +34,7 @@ UI component library for web projects
 
 ## `button`
 
-- Normalize `button` and `a.btn` buttons
+- Normalize `button` and `a.button` buttons
 
 ## `table`
 
