@@ -1,4 +1,4 @@
-import { html, state, web_component, define_component } from "/@melhosseiny/sourdough/src/index.mjs";
+// import { html, state, web_component, define_component } from "/@melhosseiny/sourdough/src/index.mjs";
 
 const template = (data) => html`
   <span ref="a b">${data.a*data.a} + ${data.b*data.b} = ${data.a*data.a+data.b*data.b}</span>
