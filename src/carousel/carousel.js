@@ -1,4 +1,4 @@
-// import { html, state, web_component, define_component } from "/@melhosseiny/sourdough/src/index.mjs";
+import { html, state, web_component, define_component } from "http://localhost:5000/melhosseiny/sourdough/main/sourdough.js";
 
 const template = (data) => html`
   <div class="carousel">
