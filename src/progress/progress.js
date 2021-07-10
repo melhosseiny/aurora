@@ -1,4 +1,4 @@
-import { html, state, web_component, define_component } from '/packages/sourdough/index.js';
+import { html, state, web_component, define_component } from "http://localhost:5000/melhosseiny/sourdough/main/sourdough.js";
 
 const template = (data) => html`
   <progress ref="progress"></progress>
