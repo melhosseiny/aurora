@@ -8,7 +8,7 @@ const style = `
   :host {
     display: none;
     z-index: 8;
-    font-family: jaf-bernino-sans-condensed, sans-serif;
+    font-family: var(--type-body);
     position: fixed;
     bottom: 0.5em;
     left: 0.5em;
