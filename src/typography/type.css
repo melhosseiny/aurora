@@ -113,15 +113,15 @@ p {
 
 blockquote {
   margin-left: 1em;
+}
 
-  & p {
-    font-style: italic;
-    margin-bottom: 0;
-  }
+blockquote p {
+  font-style: italic;
+  margin-bottom: 0;
+}
 
-  & footer {
-    text-align: right;
-  }
+blockquote footer {
+  text-align: right;
 }
 
 .quoted p {
