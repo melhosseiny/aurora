@@ -1,4 +1,4 @@
-import { html, state, web_component, define_component } from "http://localhost:5000/melhosseiny/sourdough/main/sourdough.js";
+import { html, state, web_component, define_component } from "https://busy-dog-44.deno.dev/melhosseiny/sourdough/main/sourdough.js";
 
 const template = (data) => html`
   <dialog>
