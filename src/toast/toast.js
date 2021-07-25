@@ -50,7 +50,7 @@ export function toast(spec) {
 }
 
 define_component({
-  name: 'v-toast',
+  name: 'ad-toast',
   component: toast,
   template,
   style

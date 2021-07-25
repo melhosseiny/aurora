@@ -213,7 +213,7 @@ export function carousel(spec) {
 }
 
 define_component({
-  name: 'v-carousel',
+  name: 'ad-carousel',
   component: carousel,
   template,
   style,

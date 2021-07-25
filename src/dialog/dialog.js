@@ -46,7 +46,7 @@ export function dialog(spec) {
 }
 
 define_component({
-  name: 'v-dialog',
+  name: 'ad-dialog',
   component: dialog,
   template
 });

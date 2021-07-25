@@ -69,7 +69,7 @@ export function card(spec) {
 }
 
 define_component({
-  name: 'v-card',
+  name: 'ad-card',
   component: card,
   template,
   style,
