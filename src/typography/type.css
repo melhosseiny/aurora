@@ -14,8 +14,8 @@ body {
   font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
 
   /* color */
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: rgb(var(--background-color));
+  color: rgb(var(--text-color));
 }
 
 /* Turn on common ligatures, old-style numerals and kerning */
@@ -103,7 +103,7 @@ p, blockquote {
 /* Turn on automatic hyphenation */
 p {
   margin-top: 0;
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   hyphens: auto;
   hyphenate-limit-lines: 2;
   hyphenate-limit-chars: 6 3 2;
