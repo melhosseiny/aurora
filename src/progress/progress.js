@@ -8,7 +8,7 @@ const style = `
   :host {
     display: none;
     position: fixed;
-    top: -6px;
+    top: -8px;
     left: 0;
     z-index: 8;
   }
