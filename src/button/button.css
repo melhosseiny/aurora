@@ -16,7 +16,6 @@ button, input[type="button"], a.button {
   justify-content: center;
   box-sizing: border-box;
   height: var(--line-height-body);
-  outline: none;
   user-select: none;
   -webkit-appearance: none;
   overflow: hidden;
