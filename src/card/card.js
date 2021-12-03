@@ -30,6 +30,11 @@ const style = `
     margin-bottom: 8px;
   }
 
+  figcaption div {
+    flex: 1;
+    min-width: 0;
+  }
+
   slot[name=thumbnail]::slotted(picture) {
     overflow: hidden;
     display: block;
