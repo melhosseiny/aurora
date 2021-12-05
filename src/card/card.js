@@ -24,22 +24,20 @@ const style = `
     margin-bottom: 0;
   }
 
-  figcaption {
+  figure figcaption {
     display: flex;
     margin-top: 8px;
     margin-bottom: 8px;
   }
 
-  figcaption div {
+  figure figcaption div {
     flex: 1;
     min-width: 0;
-    margin-bottom: 8px;
   }
 
   slot[name=media]::slotted(picture) {
     overflow: hidden;
     display: block;
-    margin-bottom: 8px;
     transition: border-width 0.1s ease;
     box-sizing: border-box;
   }
