@@ -2,11 +2,17 @@
 
 UI component library for web projects
 
-| Component        | Status      | Tests |
-|------------------|-------------|-------|
-| typography       | Beta        |       |
-| button           | Beta        |       |
-| table            | Beta        |       |
+| Component        | Status      | Tests | WCAG |
+|------------------|-------------|-------|------|
+| typography       | Beta        |       |      |
+| button           | Beta        |       |      |
+| table            | Beta        |       |      |
+| card             | Beta        |       |      |
+| carousel         | Beta        |       |      |
+| progress         | Beta        |       |      |
+| toast            | Beta        |       |      |
+
+[Aurora web component catalog](https://close-otter-86.deno.dev/)
 
 ## `typography`
 
