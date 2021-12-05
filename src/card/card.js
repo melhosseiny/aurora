@@ -7,8 +7,8 @@ const template = (data) => html`
       <figcaption>
         <slot name="thumbnail"></slot>
         <div>
-          ${data.title ? `<h1 class="type--body">${data.title}</h1>` : ''}
-          ${data.subtitle ? `<h2 class="type--body">${data.subtitle}</h2>` : ''}
+          ${data.title ? `<h1 class="title type--body">${data.title}</h1>` : ''}
+          ${data.subtitle ? `<h2 class="subtitle type--body">${data.subtitle}</h2>` : ''}
         </div>
       </figcaption>
       <slot name="text"></slot>
@@ -33,6 +33,15 @@ const style = `
   figcaption div {
     flex: 1;
     min-width: 0;
+    margin-bottom: 8px;
+  }
+
+  slot[name=media]::slotted(picture) {
+    overflow: hidden;
+    display: block;
+    margin-bottom: 8px;
+    transition: border-width 0.1s ease;
+    box-sizing: border-box;
   }
 
   slot[name=thumbnail]::slotted(picture) {
@@ -43,14 +52,7 @@ const style = `
     width: calc(var(--line-height-body) * 2);
   }
 
-  slot[name=media]::slotted(picture) {
-    overflow: hidden;
-    display: block;
-    transition: border-width 0.1s ease;
-    box-sizing: border-box;
-  }
-
-  h1, h2 {
+  .title, .subtitle {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
