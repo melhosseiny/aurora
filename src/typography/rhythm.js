@@ -1,8 +1,22 @@
+import { serve } from "https://deno.land/std@0.117.0/http/server.ts";
 import postcss from "https://deno.land/x/postcss/mod.js";
 import get_rhythm from "https://raw.githubusercontent.com/melhosseiny/get-rhythm/main/get_rhythm.js";
 
-const css = '@scale 16 1.618 2;';
+serve(async (request) => {
+  const { pathname, searchParams } = new URL(request.url);
 
-const result = await postcss([get_rhythm]).process(css);
+  const f0 = searchParams.get("f0");
+  const r = searchParams.get("r");
+  const i = searchParams.get("i");
 
-console.log(result.css);
+  const css = `@scale ${f0} ${r} ${i};`;
+  let response_body = await postcss([get_rhythm]).process(css);
+
+  return new Response(response_body, {
+    status: 200,
+    headers: new Headers({
+      "content-type": "text/css",
+      "access-control-allow-origin": "*",
+    })
+  });
+});
