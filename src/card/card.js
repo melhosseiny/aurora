@@ -7,8 +7,8 @@ const template = (data) => html`
       <figcaption>
         <slot name="thumbnail"></slot>
         <div>
-          ${data.title ? `<h1 class="title type--body">${data.title}</h1>` : ''}
-          ${data.subtitle ? `<h2 class="subtitle type--body">${data.subtitle}</h2>` : ''}
+          ${data.title ? `<h1 part="title" class="title type--body">${data.title}</h1>` : ''}
+          ${data.subtitle ? `<h2 part="subtitle" class="subtitle type--body">${data.subtitle}</h2>` : ''}
         </div>
       </figcaption>
       <slot name="text"></slot>
