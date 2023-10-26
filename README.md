@@ -1,6 +1,6 @@
 # Aurora
 
-UI component library for web projects
+Web component design system
 
 | Component        | Status      | Tests | WCAG |
 |------------------|-------------|-------|------|
@@ -12,7 +12,7 @@ UI component library for web projects
 | progress         | Beta        |       |      |
 | toast            | Beta        |       |      |
 
-[Aurora web component catalog](https://close-otter-86.deno.dev/)
+[Aurora web component catalog](https://aurora.deno.dev/)
 
 ## `typography`
 
