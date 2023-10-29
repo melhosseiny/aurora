@@ -163,6 +163,10 @@ ul {
   padding-left: 1em;
 }
 
+ol {
+  padding-left: revert;
+}
+
 /* Hyperlinks: LVFHA */
 a,
 a:link,
