@@ -7,8 +7,8 @@ const template = (data) => html`
       <figcaption>
         <slot name="thumbnail"></slot>
         <div>
-          ${data.title ? `<h1 part="title" class="title type--body">${data.title}</h1>` : ''}
-          ${data.subtitle ? `<h2 part="subtitle" class="subtitle type--body">${data.subtitle}</h2>` : ''}
+          ${data.title-label ? `<h1 part="title" class="title type--body">${data['title-label']}</h1>` : ''}
+          ${data.subtitle-label ? `<h2 part="subtitle" class="subtitle type--body">${data['subtitle-label']}</h2>` : ''}
         </div>
       </figcaption>
       <slot name="text"></slot>
@@ -78,5 +78,5 @@ define_component({
   component: card,
   template,
   style,
-  props: ['img', 'img-title', 'title', 'subtitle']
+  props: ['title-label', 'subtitle-label']
 });
