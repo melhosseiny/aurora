@@ -67,6 +67,11 @@ const style = `
     box-sizing: border-box;
   }
 
+  slot[name="thumbnail] {
+    display: block;
+    margin-right: 8px;
+  }
+
   slot[name=thumbnail]::slotted(*) {
     overflow: hidden;
     display: block;
