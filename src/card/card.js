@@ -67,7 +67,7 @@ const style = `
     box-sizing: border-box;
   }
 
-  slot[name=thumbnail] {
+  slot[name=thumbnail]:not(:empty) {
     display: block;
     margin-right: 8px;
   }
