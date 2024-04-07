@@ -6,7 +6,7 @@ const template = (data) => html`
       <slot name="media"></slot>
       <figcaption>
         <header>
-          <slot part="thumbnail" name="thumbnail"></slot>
+          <slot name="thumbnail"></slot>
           ${data['title-label'] || data['subtitle-label'] ? `<hgroup>
             ${data['title-label'] ? `<h1 part="title" class="title type--body">${data['title-label']}</h1>` : ''}
             ${data['subtitle-label'] ? `<h2 part="subtitle" class="subtitle type--body">${data['subtitle-label']}</h2>` : ''}
@@ -67,14 +67,10 @@ const style = `
     box-sizing: border-box;
   }
 
-  slot[name=thumbnail]:not(:empty) {
-    display: block;
-    margin-right: 8px;
-  }
-
   slot[name=thumbnail]::slotted(*) {
     overflow: hidden;
     display: block;
+    margin-right: 8px;
     height: calc(var(--line-height-body) * 2);
     width: calc(var(--line-height-body) * 2);
   }
