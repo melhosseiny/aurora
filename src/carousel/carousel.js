@@ -54,6 +54,7 @@ const style = `
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 
   .items::-webkit-scrollbar {
