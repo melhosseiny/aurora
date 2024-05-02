@@ -5,10 +5,8 @@ function get_chunks(arr, n) {
   for (let i = 0; i < chunks.length; i++) {
     chunks[i] = [];
   }
-  console.log(chunks);
   let col = 0;
   for (let i = 0; i < arr.length; i++) {
-    console.log(i, col, chunks[0] === chunks[1]);
     chunks[col].push(arr[i]);
     col = (col + 1) % n;
   }
@@ -74,15 +72,22 @@ export function media_grid(spec) {
 
   const init = () => {
     const elements = _root.shadowRoot.querySelector(".items").assignedElements();
-    cols = matchMedia("screen and (max-width: 38em)").matches ? 3 : 5;
+    const cols_sm = Number(spec['cols-sm']) || 3;
+    const cols_lg = Number(spec['cols-lg']) || 5;
+    cols = matchMedia("screen and (max-width: 38em)").matches ? cols_sm : cols_lg;
+    (_root.shadowRoot.host).setAttribute("style", `--cols: ${cols}`);
     _state.chunks = get_chunks(elements, cols);
-    console.log("ITEMS", elements);
-    console.log("CHUNKS", get_chunks(elements, cols));
   }
   
-  const adjust_cols = () => {
+  const adjust_cols = (event) => {
+    if (document.fullscreenElement) {
+      return;
+    }
+    const cols_sm = Number(spec['cols-sm']) || 3;
+    const cols_lg = Number(spec['cols-lg']) || 5;
     const elements = _root.shadowRoot.querySelector(".items").assignedElements();
-    cols = matchMedia("screen and (max-width: 38em)").matches ? 3 : 5;
+    cols = matchMedia("screen and (max-width: 38em)").matches ? cols_sm : cols_lg;
+    (_root.shadowRoot.host).setAttribute("style", `--cols: ${cols}`);
     _state.chunks = get_chunks(elements, cols);
   }
 
@@ -106,5 +111,6 @@ define_component({
   name: "ad-media-grid",
   component: media_grid,
   template,
-  style
+  style,
+  props: ["cols-lg", "cols-sm"]
 });
