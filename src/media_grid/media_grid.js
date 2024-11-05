@@ -69,34 +69,34 @@ export function media_grid(spec) {
   const _state = _web_component.state;
   
   let cols;
+  const media = matchMedia("screen and (max-width: 38em)");
 
   const init = () => {
-    const elements = _root.shadowRoot.querySelector(".items").assignedElements();
+    adjust_cols();
+  }
+  
+  const adjust_cols = () => {
     const cols_sm = Number(spec['cols-sm']) || 3;
     const cols_lg = Number(spec['cols-lg']) || 5;
-    cols = matchMedia("screen and (max-width: 38em)").matches ? cols_sm : cols_lg;
+    const elements = _root.shadowRoot.querySelector(".items").assignedElements();
+    cols = media.matches ? cols_sm : cols_lg;
     (_root.shadowRoot.host).setAttribute("style", `--cols: ${cols}`);
     _state.chunks = get_chunks(elements, cols);
   }
   
-  const adjust_cols = (event) => {
+  const handle_media_change = (event) => {
     if (document.fullscreenElement) {
       return;
     }
-    const cols_sm = Number(spec['cols-sm']) || 3;
-    const cols_lg = Number(spec['cols-lg']) || 5;
-    const elements = _root.shadowRoot.querySelector(".items").assignedElements();
-    cols = matchMedia("screen and (max-width: 38em)").matches ? cols_sm : cols_lg;
-    (_root.shadowRoot.host).setAttribute("style", `--cols: ${cols}`);
-    _state.chunks = get_chunks(elements, cols);
+    adjust_cols();
   }
 
   const effects = () => {
-    window.addEventListener("resize", adjust_cols);
+    media.addEventListener("change", handle_media_change);
   }
 
   const cleanup_effects = () => {
-    window.removeEventListener("resize", adjust_cols);
+    media.removeEventListener("change", handle_media_change);
   }
 
   return Object.freeze({
