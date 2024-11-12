@@ -20,6 +20,10 @@ const template = (data) => html`
 `
 
 const style = `
+  :root {
+    display: block;
+  }
+
   figure {
     display: flex;
     flex-direction: column;
